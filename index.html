@@ -13,18 +13,15 @@
 
     <div class="header-content">
       <div class="logo-area">
-  <img src="https://copilot.microsoft.com/th/id/BCO.eef6fecc-5c85-4b93-966b-fe33bfd0336e.png"
-       alt="GlobalImport S.A."
-       class="logo-img">
+        <img src="assets\imagenes\logo del mundo lado izquierdo.png"
+             alt="GlobalImport S.A."
+             class="logo-img">
 
-  <div class="logo-text-area">
-    <h1 class="logo-text">GlobalImport S.A.</h1>
-    <p class="slogan">Conectando el mundo con tus productos</p>
-  </div>
-</div>
-
-      
-
+        <div class="logo-text-area">
+          <h1 class="logo-text">GlobalImport S.A.</h1>
+          <p class="slogan"><em>Conectando el mundo con tus productos</em></p>
+        </div>
+      </div>
 
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
@@ -34,7 +31,6 @@
         <a href="registro.html">Registro</a>
       </nav>
 
-      <!-- Buscador -->
       <form class="search-bar">
         <input type="text" placeholder="Buscar productos..." />
         <button type="submit">🔍</button>
@@ -44,31 +40,33 @@
 
   <!-- CTA -->
   <section class="hero">
-    
     <a href="#servicios" class="btn">Ver Servicios</a>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="servicios">
+  <section id="servicios" class="servicios fade-section">
     <h2>Nuestros Servicios</h2>
     <div class="grid">
-      <div class="card">
-        <img src="assets/images/electronica.png" alt="Electrónica">
+      <div class="card fade-item">
+        <img src="assets/imagenes/logo1_electronica.png" width="85" height="58">
         <h3>Importación de Electrónica</h3>
         <p>Traemos lo último en tecnología desde los principales mercados internacionales.</p>
       </div>
-      <div class="card">
-        <img src="assets/images/ropa.png" alt="Indumentaria">
+
+      <div class="card fade-item">
+        <img src="assets\imagenes\logo2_indumentaria.png" width="85" height="58">
         <h3>Indumentaria y Accesorios</h3>
         <p>Moda y estilo importados con calidad garantizada.</p>
       </div>
-      <div class="card">
-        <img src="assets/images/hogar.png" alt="Hogar">
+
+      <div class="card fade-item">
+        <img src="assets\imagenes\logo3_hogar.png"width="80" height="">
         <h3>Artículos del Hogar</h3>
         <p>Productos prácticos y modernos para tu casa.</p>
       </div>
-      <div class="card">
-        <img src="assets/images/logistica.png" alt="Logística">
+
+      <div class="card fade-item">
+        <img src="assets\imagenes\logo4_logistica.png"width="85" height="58">
         <h3>Logística y Distribución</h3>
         <p>Red eficiente para entregar tus productos en tiempo y forma.</p>
       </div>
@@ -76,33 +74,70 @@
   </section>
 
   <!-- ¿Por qué elegirnos? -->
-  <section id="elegirnos" class="elegirnos">
+  <section id="elegirnos" class="elegirnos fade-section">
     <h2>¿Por qué elegirnos?</h2>
     <div class="razones">
-      <div class="razon">
-        <img src="assets/icons/confianza.png" alt="Confianza">
+      <div class="razon fade-item">
+       
         <h3>Confianza</h3>
-        <p>Trabajamos con proveedores certificados y procesos transparentes.</p>
+         <img src="assets\imagenes\logo_elegirnos.png"width="85" height="58">
       </div>
-      <div class="razon">
-        <img src="assets/icons/experiencia.png" alt="Experiencia">
+
+      <div class="razon fade-item">
+        
         <h3>Experiencia</h3>
-        <p>Más de 10 años conectando mercados internacionales.</p>
+        <img src="assets\imagenes\logo_experiencia.png"width="85" height="58">
       </div>
-      <div class="razon">
-        <img src="assets/icons/variedad.png" alt="Variedad">
+
+      <div class="razon fade-item">
+        
         <h3>Variedad</h3>
-        <p>Amplia gama de productos en electrónica, moda y hogar.</p>
+        <img src="assets/imagenes/logo_variedad.png"width="85" height="58">
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer id="contacto">
-    <p>© 2026 GlobalImport S.A. | contacto@globalimport.com | +56 9 1234 5678</p>
-    <div class="social">
-      <a href="#">Facebook</a> | <a href="#">Instagram</a>
-    </div>
+    <p>© 2026 GlobalImport S.A. |  contacto@globalimport.com | +56 9 1234 5678 </p>
   </footer>
+
+ 
+ <!-- JS NIVEL DIOS -->
+  <script>
+    const header = document.querySelector(".header-banner");
+    const hero = document.querySelector(".hero");
+
+    const faders = document.querySelectorAll(".fade-item");
+
+    window.addEventListener("scroll", () => {
+      let scrollY = window.scrollY;
+
+      //PARALLAX
+      header.style.backgroundPositionY = scrollY * 0.5 + "px";
+
+      // ZOOM
+      header.style.transform = `scale(${1 + scrollY / 2000})`;
+
+      //FADE HEADER
+      header.style.opacity = 1 - scrollY / 500;
+
+      // HERO APARECE
+      let visible = scrollY / 400;
+      hero.style.opacity = Math.min(visible, 1);
+      hero.style.transform = `translateY(${50 - visible * 50}px)`;
+
+      // APARICIÓN DE ELEMENTOS
+      faders.forEach(el => {
+        let rect = el.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
+
+        if (rect < windowHeight - 100) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
