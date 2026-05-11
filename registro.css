@@ -18,3 +18,64 @@ h1 {
   border-radius: 8px;
   border: 1px solid #ddd;
 }
+
+/* Colores distintos por sección */
+.datos-personales {
+  background: #eaf4fc; /* azul claro */
+}
+.contacto-acceso {
+  background: #fdf2e9; /* naranja claro */
+}
+.direccion {
+  background: #e9fdf0; /* verde claro */
+}
+.preferencias {
+  background: #f9e9fd; /* violeta claro */
+}
+
+.form-section h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,119,204,0.3);
+}
+
+.form-actions {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: #0077cc;
+  color: white;
+}
+
+button[type="reset"] {
+  background: #ccc;
+}
