@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario</title>
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+  <main class="form-container">
+    <h1>Registro de Usuario</h1>
+    <form id="registroForm">
+
+      <!-- Sección A: Datos Personales -->
+      <section class="form-section datos-personales">
+        <h2>Datos Personales</h2>
+        <label for="nombre">Nombre completo *</label>
+        <input type="text" id="nombre" required>
+
+        <label for="fecha">Fecha de nacimiento *</label>
+        <input type="date" id="fecha" required>
+
+        <label for="rut">RUT / Documento *</label>
+        <input type="text" id="rut" required>
+
+        <label for="genero">Género *</label>
+        <select id="genero" required>
+          <option value="">Seleccione...</option>
+          <option>Masculino</option>
+          <option>Femenino</option>
+          <option>No binario</option>
+          <option>Prefiero no decir</option>
+        </select>
+
+        <label for="nacionalidad">Nacionalidad *</label>
+        <select id="nacionalidad" required>
+          <option value="">Seleccione...</option>
+          <option>Chile</option>
+          <option>Argentina</option>
+          <option>Perú</option>
+          <option>Bolivia</option>
+          <option>Brasil</option>
+          <option>Colombia</option>
+          <option>España</option>
+          <option>México</option>
+        </select>
+      </section>
+      <!-- Botones -->
+      <div class="form-actions">
+        <button type="submit">Registrarme</button>
+        <button type="reset">Limpiar formulario</button>
+        <p><a href="#">Ya tengo cuenta, iniciar sesión</a></p>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
